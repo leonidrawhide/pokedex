@@ -1,0 +1,45 @@
+body {
+	background: url('../img/pikachu-looks.jpg');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+
+.logo-nav {
+	left: 15%;
+	height: 100%;
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: cover;
+	}
+}
+  
+.pokelist {
+	margin: 15px 15%;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	align-content: flex-start;
+	justify-content: space-between;
+}
+
+.pokecard {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 15px;
+	border: 1px solid black;
+	width: 300px;
+	border-radius: 15px;
+	padding-bottom: 10px;
+	background-color: rgba(0, 0, 0, 0.1);
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.about-page {
+	height: 80vh; 
+}
