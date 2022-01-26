@@ -20,7 +20,7 @@ body {
 .pokelist {
   background: rgba(0, 0, 0, 0.1);
   min-height: calc(100vh - 64px);
-  margin: 0 25%;
+  margin: 0 15%;
   margin: 0px 15%;
   padding-top: 15px;
   display: -webkit-box;
@@ -66,18 +66,11 @@ body {
   border-radius: 10px;
 }
 
-.pokecard:hover h2 {
-  font-size: 4rem;
-}
-
 .about-page {
-  height: 80vh;
-  background: url("../img/pikachu-looks.jpg");
-  background-repeat: no-repeat;
-  background-position: bottom left;
   background: rgba(0, 0, 0, 0.1);
   min-height: calc(100vh - 64px);
-  margin: 0 25%;
+  margin: 0 15%;
+  height: 80vh;
 }
 
 .about-page p {
@@ -86,28 +79,25 @@ body {
 }
 
 .pokemon-page {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   min-height: calc(100vh - 64px);
-  display: -ms-grid;
-  display: grid;
+  margin: 0 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-grid-columns: 2;
       grid-template-columns: 2;
   -ms-grid-rows: 2;
       grid-template-rows: 2;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  margin: 0 25%;
+  padding: 0 10%;
 }
 
 .image-name-wrapper {
   display: inline-block;
-  max-width: 400px;
   max-height: 700px;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-area: 1 / 1 / 2 / 2;
+  width: 50%;
 }
 
 .image-name-wrapper img {
@@ -117,27 +107,33 @@ body {
 
 .image-name-wrapper img {
   width: 400px;
-  height: 400px;
+  max-height: 400px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+.image-name-wrapper h2 {
+  text-align: center;
+  margin: 15px auto 25px;
+  background: rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  border-radius: 15px;
 }
 
 .info-wrapper {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 15px 0 auto 10px;
+  padding: 5px;
   display: inline-block;
-  max-width: 400px;
-  max-height: 400px;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 1 / 2 / 2 / 3;
+  width: 50%;
+  height: 100%;
+  text-align: left;
 }
 
-.table-of-learnset-wrapper {
-  display: block;
-}
-
-.table-of-learnset-wrapper::before {
-  content: "\A";
-  white-space: pre;
+.pokemon-table-header {
+  text-align: center;
+  font-size: 1.2em;
 }
 
 .skeleton {

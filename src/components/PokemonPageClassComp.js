@@ -41,27 +41,47 @@ class PokemonPageClassComp extends Component {
 		return <div className='pokemon-page'>
 
 			<div className={imgAndNameClass}>
-			<h2>{pokemonName}</h2>
+				<h2>{pokemonName}</h2>
 				<img src={pokemonInfo.sprites?.other.home.front_default} alt="Картинка покемона" />
 			</div>
 			<div className={infoClass}>
-				<p> Способности:</p>
-				<ul>
-					{pokemonInfo.abilities?.map((ability) => (
-						<li>{ability.ability.name}</li>
-					))}
-				</ul>
-				<p>Рост: {pokemonInfo.height * 10} см </p>
-				<p>Вес: {pokemonInfo.weight / 10} кг </p>
 				<table>
+					<tr>
+						<th className='pokemon-table-header'>
+							Информация о покемоне
+						</th>
+					</tr>
+					<tr>
+						<th>Рост:</th>
+						<td>{pokemonInfo.height * 10} см</td>
+					</tr>
+					<tr>
+						<th>Вес:</th>
+						<td> {pokemonInfo.weight / 10} кг</td>
+					</tr>
+					<tr >
+						<th>Способности:</th>
+					</tr>
+					
+					{pokemonInfo.abilities?.map((ability) => (
+						<tr><td>{ability.ability.name}</td></tr>
+					))}
+					
+				</table>
+				<table>
+					<tr>
+						<th className='pokemon-table-header'>
+							Показатели:
+						</th>
+					</tr>
 					<tr>
 						<th>Название</th>
 						<th>Мощность</th>
 					</tr>
 						{pokemonInfo.stats?.map((stat) => (
 							<tr>
-								<th>{stat.stat.name}</th>
-								<th>{stat.base_stat}</th>
+								<td>{stat.stat.name}</td>
+								<td>{stat.base_stat}</td>
 							</tr>
 						))}
 				</table>

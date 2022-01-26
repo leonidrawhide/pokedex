@@ -8,7 +8,7 @@
 @mixin page-background-and-height {
 	background: rgba(0, 0, 0, 0.1);
 	min-height: calc(100vh - 64px);
-	margin: 0 25%;
+	margin: 0 15%;
 }
 
 body {
@@ -27,11 +27,11 @@ body {
   
 .pokelist {
 	@include page-background-and-height();
+
 	margin: 0px 15%;
 	padding-top: 15px;
 	display: flex;
 	flex-direction: row;
-	// flex-wrap: wrap;
 	flex-flow: wrap;
 	position: relative;
 	align-content: flex-start;
@@ -46,10 +46,10 @@ body {
 	color: white;
 	width: 300px;
 	height: calc(100% - 15px);
-	// min-height: 500px;
 	border-radius: 15px;
 	padding-bottom: 10px;
 	background-color: rgba(0, 0, 0, 0.1);
+
 
 	@include img-one-hundred();
 	.img-wrapper {
@@ -58,21 +58,13 @@ body {
 		border-radius: 10px;
 	}
 
-	&:hover {
-		h2 {
-			font-size: 4rem;
-		}
-	}
+
 }
 
 .about-page {
-	height: 80vh; 
-
-	background: url('../img/pikachu-looks.jpg');
-	background-repeat: no-repeat;
-	background-position: bottom left;
-
 	@include page-background-and-height();
+
+	height: 80vh;
 
 	p {
 		margin: 0;
@@ -81,45 +73,52 @@ body {
 }
 
 .pokemon-page {
-	background: rgba(0, 0, 0, 0.2);
-	min-height: calc(100vh - 64px);
-	display: grid;
+	@include page-background-and-height();
+
+	display: flex;
 	grid-template-columns: 2;
 	grid-template-rows: 2;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-
-	margin: 0 25%;
+	padding: 0 10%
 }
 
 .image-name-wrapper {
 	display: inline-block;
-	// border: 1px black solid;
-	max-width: 400px;
 	max-height: 700px;
-	grid-area: 1 / 1 / 2 / 2;
+	width: 50%;
 
 	@include img-one-hundred();
 	img {
 		width: 400px;
-		height: 400px;
+		max-height: 400px;
+		background: rgba(0, 0, 0, 0.1);
+		border-radius: 15px;
+	}
+
+	h2 {
+		text-align: center;
+		margin: 15px auto 25px;
+		background: rgba(0, 0, 0, 0.1);
+		max-width: 400px;
+		border-radius: 15px;
 	}
 }
 
 .info-wrapper {
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	margin: 15px 0 auto 10px;
+	padding: 5px;
 	display: inline-block;
-	max-width: 400px;
-	max-height: 400px;
-	grid-area: 1 / 2 / 2 / 3;
+	width: 50%;
+	height: 100%;
+	text-align: left;
 }
 
-.table-of-learnset-wrapper {
-	display: block;
-	// grid-area: 2 / 1 / 3 / 2;
-	&::before {
-		content: "\A";
-		white-space: pre;
-	  }
+.pokemon-table-header {
+	text-align: center;
+	font-size: 1.2em;
 }
 
 .skeleton {
