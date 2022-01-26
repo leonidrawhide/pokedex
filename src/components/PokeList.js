@@ -59,9 +59,9 @@ export default class PokeList extends Component {
 							pathname: '' + (index + 1 + ((currentPage - 1) * 12))
 							}} 	
 						>
-							<div key={'' + (index + 1 + ((currentPage - 1) * 12))}>
+							{/* <div key={'' + (index + 1 + ((currentPage - 1) * 12))}> */}
 								<PokeCard item={item} index={index + 1 + ((currentPage - 1)*12)}/>
-							</div>
+							{/* </div> */}
 						</Link>
 					))}
 					<Pagination totalRecords={totalItems} pageLimit={12} pageNeighbours={1} onPageChanged={this.onPageChanged} />
