@@ -49,18 +49,23 @@ body {
 	border-radius: 15px;
 	padding-bottom: 10px;
 	background-color: rgba(0, 0, 0, 0.1);
-	transition: 1s; /* Время эффекта */
+	transition: 1s;
 
 	@include img-one-hundred();
 	.img-wrapper {
 		margin: 10px;
 		background: rgba(0, 0, 0, 0.1);
 		border-radius: 10px;
+		transition: 1s;
 	}
 
 	&:hover {
 		background: rgba(0, 0, 0, 0.5);
-		transform: scale(1.05)
+		transform: scale(1.05);
+		.img-wrapper {
+			background: rgba(0, 0, 0, 0);
+			transform: scale(1.1)
+		}
 	}
 }
 
