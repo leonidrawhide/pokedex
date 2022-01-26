@@ -6,11 +6,11 @@ export default function PokeNavBar() {
   return <div>
     <nav>
       <div className="nav-wrapper orange darken-4">
-        <a href="/" className="brand-logo logo-nav">
+        <Link to="/" className="brand-logo logo-nav">
           <img src={pokedexLogo} alt="pokedex logo" />  
-        </a>
+        </Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><a href="/">Pokedex</a></li>
+          <li><Link to="/">Pokedex</Link></li>
           <li><Link to="about">About</Link></li>
         </ul>
       </div>
