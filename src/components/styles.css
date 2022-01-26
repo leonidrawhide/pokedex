@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background: linear-gradient(35deg, white, #e65100);
 }
@@ -53,6 +54,9 @@ body {
   border-radius: 15px;
   padding-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: 1s;
+  transition: 1s;
+  /* Время эффекта */
 }
 
 .pokecard img {
@@ -64,6 +68,12 @@ body {
   margin: 10px;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+
+.pokecard:hover {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .about-page {
