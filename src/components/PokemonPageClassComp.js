@@ -8,8 +8,10 @@ class PokemonPageClassComp extends Component {
 			isLoaded: false,
 			error: false,
 			pokemonInfo: [],
-			skeleton: 'skeleton'
+			skeleton: 'skeleton',
+			imgIndex: 2
 		};
+		this.handleClick = this.handleClick.bind(this);
 		console.log(this.state)
 	}
 
@@ -32,17 +34,53 @@ class PokemonPageClassComp extends Component {
 			})
 	}
 
+	handleClick(index) {
+		console.log(index)
+		this.setState(prevState => ({
+			imgIndex: index
+		}))
+	}
+
 	render() {
-		const { pokemonInfo, skeleton } = this.state;
+		const { pokemonInfo, skeleton, imgIndex } = this.state;
+		// if (pokemonInfo.length === 0) {
+		// 	return <div>
+		// 		Loading...
+		// 	</div>
+		// }
 		console.log(pokemonInfo)
 		const pokemonName = pokemonInfo.name?.charAt(0).toUpperCase() + pokemonInfo.name?.slice(1);
-		const imgAndNameClass = 'image-name-wrapper ' + {skeleton}
-		const infoClass = 'info-wrapper ' + {skeleton}
+		const imgAndNameClass = 'main-wrapper ' + skeleton
+		const infoClass = 'info-wrapper ' + skeleton
+		const spriteLinkArr = []
+		for (let index in pokemonInfo.sprites) {
+			if (typeof pokemonInfo.sprites[index] === 'string') {
+				spriteLinkArr.unshift(pokemonInfo.sprites[index])
+			} else if (index === 'other') {
+				for (let innerIndex in pokemonInfo.sprites[index]) {
+					for (let anotherInnerIndex in pokemonInfo.sprites[index][innerIndex]) {
+						if (typeof pokemonInfo.sprites[index][innerIndex][anotherInnerIndex] === 'string') spriteLinkArr.unshift(pokemonInfo.sprites[index][innerIndex][anotherInnerIndex])
+					}
+				}
+			}
+		}
+		
 		return <div className='pokemon-page'>
 
 			<div className={imgAndNameClass}>
 				<h2>{pokemonName}</h2>
-				<img src={pokemonInfo.sprites?.other.home.front_default} alt="Картинка покемона" />
+				<div className='image-wrapper'>
+					{/* <img src={pokemonInfo.sprites?.other.home.front_default} alt="Картинка покемона" /> */}
+					<img src={spriteLinkArr[imgIndex]} alt="Картинка покемона" />
+				</div>
+				<div className='sprites-wrapper'>
+
+					{spriteLinkArr.map((sprite, index) => (
+						// <div onClick={() => this.handleClick(index)}>
+							<img src={sprite} alt="picture of a pokemon" className='sprite' onClick={() => this.handleClick(index)} />
+						// </div>
+					))}
+				</div>
 			</div>
 			<div className={infoClass}>
 				<table>
