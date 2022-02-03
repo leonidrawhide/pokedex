@@ -43,11 +43,7 @@ class PokemonPageClassComp extends Component {
 
 	render() {
 		const { pokemonInfo, skeleton, imgIndex } = this.state;
-		// if (pokemonInfo.length === 0) {
-		// 	return <div>
-		// 		Loading...
-		// 	</div>
-		// }
+
 		console.log(pokemonInfo)
 		const pokemonName = pokemonInfo.name?.charAt(0).toUpperCase() + pokemonInfo.name?.slice(1);
 		const imgAndNameClass = 'main-wrapper ' + skeleton
@@ -70,15 +66,12 @@ class PokemonPageClassComp extends Component {
 			<div className={imgAndNameClass}>
 				<h2>{pokemonName}</h2>
 				<div className='image-wrapper'>
-					{/* <img src={pokemonInfo.sprites?.other.home.front_default} alt="Картинка покемона" /> */}
 					<img src={spriteLinkArr[imgIndex]} alt="Картинка покемона" />
 				</div>
 				<div className='sprites-wrapper'>
 
 					{spriteLinkArr.map((sprite, index) => (
-						// <div onClick={() => this.handleClick(index)}>
-							<img src={sprite} alt="picture of a pokemon" className='sprite' onClick={() => this.handleClick(index)} />
-						// </div>
+						<img src={sprite} alt="picture of a pokemon" className='sprite' onClick={() => this.handleClick(index)} />
 					))}
 				</div>
 			</div>
@@ -124,20 +117,6 @@ class PokemonPageClassComp extends Component {
 						))}
 				</table>
 			</div>
-			{/* <div className='table-of-learnset-wrapper'>
-				<table class="responsive-table">
-					<tr>
-						<th>Level</th>
-						<th>Move</th>
-					</tr>
-						{pokemonInfo.moves?.map((move) => (
-							<tr>
-								<th>{move.version_group_details[0].level_learned_at}</th>
-								<th>{move.move.name}</th>
-							</tr>
-						))}
-				</table>
-			</div> */}
 		</div>;
 	}
 }
