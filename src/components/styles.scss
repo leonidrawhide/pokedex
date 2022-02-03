@@ -15,16 +15,46 @@
 body {
 	background: linear-gradient(35deg, white, #e65100)
 }
+.poke-nav {
+	.logo-nav {
+		left: 15%;
+		height: 100%;
 
-.logo-nav {
-	left: 15%;
-	height: 100%;
+		@include img-one-hundred();
+		img {
+			object-fit: cover;
+			@media (max-width: 992px) {
+				margin-left: calc((100vw - 700px) / 2);
+			}
+			@media (max-width: 700px) {
+				margin: 0;
+			}
+			
+		}
+		@media (max-width: 992px) {
+			left: 0;
+			transform: none;
+		}
 
-	@include img-one-hundred();
-	img {
-		object-fit: cover;
+	}
+	ul {
+		@media (max-width: 374px) {
+			display: none;
+		}
+	}
+	@media (max-width: 992px) {
+		padding: 0 calc((100vw - 700px) / 2);
+		// max-width: 700px;
+	}
+	@media (max-width: 992px) {
+		padding: 0;
+		// max-width: 700px;
+	}
+	@media (max-width: 374px) {
+		padding: 0 auto;
 	}
 }
+
   
 .pokelist {
 	@include page-background-and-height();
@@ -37,6 +67,11 @@ body {
 	position: relative;
 	align-content: flex-start;
 	justify-content: space-evenly;
+
+	@media (max-width: 1000px) {
+		margin: 0 auto;
+		max-width: 700px;
+	}
 }
 
 .pokecard {

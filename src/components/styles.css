@@ -2,19 +2,63 @@ body {
   background: linear-gradient(35deg, white, #e65100);
 }
 
-.logo-nav {
+.poke-nav .logo-nav {
   left: 15%;
   height: 100%;
 }
 
-.logo-nav img {
+.poke-nav .logo-nav img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.logo-nav img {
+.poke-nav .logo-nav img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .poke-nav .logo-nav img {
+    margin-left: calc((100vw - 700px) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  .poke-nav .logo-nav img {
+    margin: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .poke-nav .logo-nav {
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@media (max-width: 374px) {
+  .poke-nav ul {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .poke-nav {
+    padding: 0 calc((100vw - 700px) / 2);
+  }
+}
+
+@media (max-width: 992px) {
+  .poke-nav {
+    padding: 0;
+  }
+}
+
+@media (max-width: 374px) {
+  .poke-nav {
+    padding: 0 auto;
+  }
 }
 
 .pokelist {
@@ -38,6 +82,13 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+@media (max-width: 1000px) {
+  .pokelist {
+    margin: 0 auto;
+    max-width: 700px;
+  }
 }
 
 .pokecard {
