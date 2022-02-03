@@ -3,6 +3,8 @@
 
 This project is built using React and SCSS, all data is taken in JSON format from from [Pokeapi](https://pokeapi.co/)
 
+[This project is hosted on GH Pages](https://leonidrawhide.github.io/pokedex/#/)
+
 Desktop screenshots:
 
 ![Main page](https://i.postimg.cc/mrzmj6CC/poke1.png "Main page")
