@@ -103,6 +103,15 @@ body {
 			transform: scale(1.1)
 		}
 	}
+
+	
+	@media (max-width: 300px) {
+		width: 100vw;
+
+		h2 {
+			font-size: 2rem;
+		}
+	}
 }
 
 .about-page {

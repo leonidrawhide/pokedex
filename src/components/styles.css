@@ -133,6 +133,15 @@ body {
           transform: scale(1.1);
 }
 
+@media (max-width: 300px) {
+  .pokecard {
+    width: 100vw;
+  }
+  .pokecard h2 {
+    font-size: 2rem;
+  }
+}
+
 .about-page {
   background: rgba(0, 0, 0, 0.1);
   min-height: calc(100vh - 64px);
